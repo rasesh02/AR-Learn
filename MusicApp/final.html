@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <style>
+    #volume-controls {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    #volume-controls label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    #volume-controls input[type="range"] {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body style="margin: 0px; overflow: hidden;">
+  <div id="volume-controls">
+    <label for="guitarVolume">Guitar Volume</label>
+    <input type="range" id="guitarVolume" min="0" max="1" step="0.01" value="1">
+
+    <label for="drumsVolume">Drums Volume</label>
+    <input type="range" id="drumsVolume" min="0" max="1" step="0.01" value="1">
+
+    <label for="pianoVolume">Piano Volume</label>
+    <input type="range" id="pianoVolume" min="0" max="1" step="0.01" value="1">
+
+    <label for="micVolume">Mic Volume</label>
+    <input type="range" id="micVolume" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <a-scene arjs="detectionMode: mono_and_matrix; matrixCodeType: 3x3">
+    <a-assets>
+      <img id="drumsImage" src="./assets/drums.png"/>
+      <img id="guitarImage" src="./assets/guitar.png"/>
+      <img id="micImage" src="./assets/mic.png"/>
+      <img id="pianoImage" src="./assets/piano.png"/>
+    </a-assets>
+
+    <a-marker name="drums" class="ar-marker" type="barcode" value="0">
+      <a-image src="#drumsImage" rotation="90 0 0" position="0 0 0"/>
+    </a-marker>
+
+    <a-marker name="guitar" class="ar-marker" type="barcode" value="1">
+      <a-image src="#guitarImage" rotation="90 0 0"/>
+    </a-marker>
+
+    <a-marker name="mic" class="ar-marker" type="barcode" value="2">
+      <a-image src="#micImage" rotation="90 0 0"/>
+    </a-marker>
+
+    <a-marker name="piano" class="ar-marker" type="barcode" value="3">
+      <a-image src="#pianoImage" rotation="90 0 0"/>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+
+  <script>
+    let guitar = new Howl({
+      src: ['./audio/guitar.mp3'],
+      loop: true,
+      volume: 1
+    });
+
+    let mic = new Howl({
+      src: ['./audio/mic.mp3'],
+      loop: true,
+      volume: 1
+    });
+
+    let drums = new Howl({
+      src: ['./audio/drums.mp3'],
+      loop: true,
+      volume: 1
+    });
+
+    let piano = new Howl({
+      src: ['./audio/piano.mp3'],
+      loop: true,
+      volume: 1
+    });
+
+    let audioMap = {
+      'guitar': guitar,
+      'drums': drums,
+      'piano': piano,
+      'mic': mic
+    };
+
+    guitar.play();
+    mic.play();
+    drums.play();
+    piano.play();
+
+    window.onload = function () {
+      let arMarkers = document.getElementsByClassName('ar-marker');
+
+      Array.from(arMarkers).forEach(function (arMarker) {
+        let name = arMarker.getAttribute('name');
+        arMarker.addEventListener('markerFound', function () {
+          audioMap[name].mute(false);
+        });
+        arMarker.addEventListener('markerLost', function () {
+          audioMap[name].mute(true);
+        });
+      });
+
+      document.getElementById('guitarVolume').addEventListener('input', function() {
+        guitar.volume(parseFloat(this.value));
+      });
+      document.getElementById('drumsVolume').addEventListener('input', function() {
+        drums.volume(parseFloat(this.value));
+      });
+      document.getElementById('pianoVolume').addEventListener('input', function() {
+        piano.volume(parseFloat(this.value));
+      });
+      document.getElementById('micVolume').addEventListener('input', function() {
+        mic.volume(parseFloat(this.value));
+      });
+    };
+  </script>
+</body>
+</html>

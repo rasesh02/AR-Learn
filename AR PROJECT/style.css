@@ -1,0 +1,312 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 1em;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 2em;
+  }
+  
+  h1, h2 {
+    color: #4CAF50;
+  }
+  
+  .markers {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .markers img {
+    margin: 1em;
+    width: 200px;
+    height: auto;
+  }
+  
+  footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    
+    width: 100%;
+    bottom: 0;
+  }
+  header h1 {
+    margin: 0.5em 0; /* Adjusted margin */
+    padding: 0; /* Adjusted padding */
+  }
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }  
+  /* Add this CSS to your existing style.css */
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  footer p {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .social-icons {
+    margin-top: 10px; /* Adjust spacing */
+  }
+  
+  .social-icons a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px; /* Adjust spacing between icons */
+  }
+  
+  .social-icons a:hover {
+    text-decoration: underline;
+  }
+/* Add this CSS to your existing style.css */
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  footer p {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .social-icons {
+    margin-top: 10px; /* Adjust spacing */
+  }
+  
+  .social-icons img {
+    width: 30px; /* Adjust size of icons as needed */
+    height: auto;
+    margin: 0 10px; /* Adjust spacing between icons */
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 1em;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 2em;
+  }
+  
+  h1,
+  h2 {
+    color: #4CAF50;
+  }
+  
+  .markers {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .marker {
+    text-align: center;
+    margin: 1em;
+  }
+  
+  .marker-image {
+    margin-bottom: 0.5em;
+  }
+  
+  .marker-download {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .marker-download button {
+    padding: 0.5em 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .marker-download button:hover {
+    background-color: #45a049;
+  }
+  
+  footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+  }
+  
+  .social-icons {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icons li {
+    margin: 0 5px;
+  }
+  
+  .social-icons img {
+    width: 30px;
+    height: auto;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 1em;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 2em;
+  }
+  
+  h1,
+  h2 {
+    color: #4CAF50;
+  }
+  
+  .markers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center markers horizontally */
+  }
+  
+  .marker {
+    text-align: center;
+    margin: 1em;
+  }
+  
+  .marker-image {
+    margin-bottom: 0.5em;
+  }
+  
+  .marker-download {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .marker-download button {
+    padding: 0.5em 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .marker-download button:hover {
+    background-color: #45a049;
+  }
+  
+  footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    bottom: 0;
+    position: static;
+    z-index: 1; /* Ensure footer is above other content */
+  }
+  
+  .social-icons {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icons li {
+    margin: 0 5px;
+  }
+  
+  .social-icons img {
+    width: 30px;
+    height: auto;
+  }
+
+    

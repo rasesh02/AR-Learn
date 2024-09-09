@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+
+  <a-scene arjs>
+    <a-assets>
+      <a-asset-item id="c" src="../AR1/alphabetModels/cat/scene.gltf"></a-asset-item>
+      <a-asset-item id="d" srd="../AR1/alphabetModels/dog/scene.gltf"></a-asset-item>
+      <a-asset-item id="h" src="../AR1/alphabetModels/horse/scene.gltf"></a-asset-item>
+      <a-asset-item id="i" src="../AR1/alphabetModels/ice_cream/scene.gltf"></a-asset-item>
+      <a-asset-item id="j" src="../AR1/alphabetModels/jaguar/scene.gltf"></a-asset-item>
+      <a-asset-item id="k" src="../AR1/alphabetModels/kite/scene.gltf"></a-asset-item>
+      <a-asset-item id="l" src="../AR1/alphabetModels/lion/scene.gltf"></a-asset-item>
+      <a-asset-item id="p" src="../AR1/alphabetModels/pen/scene.gltf"></a-asset-item>
+      <a-asset-item id="r" src="../AR1/alphabetModels/chinese_rose/scene.gltf"></a-asset-item>
+      <a-asset-item id="t" src="../AR1/alphabetModels/telephone/scene.gltf"></a-asset-item>
+      <a-asset-item id="u" src="../AR1/alphabetModels/low-poly_umbrella/scene.gltf"></a-asset-item>
+      <a-asset-item id="s" src="../AR1/alphabetModels/ps1low_poly_great_white_shark/scene.gltf"></a-asset-item>
+      <a-asset-item id="v" src="../AR1/alphabetModels/transport_van_-_ps1_low_poly/scene.gltf"></a-asset-item>
+      <a-asset-item id="w" src="../AR1/alphabetModels/timex_expedition_watch/scene.gltf"></a-asset-item>
+      <a-asset-item id="x" src="../AR1/alphabetModels/neon_christmas_tree_-_day_12/scene.gltf"></a-asset-item>
+      <a-asset-item id="y" src="../AR1/alphabetModels/low_poly_fantasy_yacht_free/scene.gltf"></a-asset-item>
+      <a-asset-item id="z" src="../AR1/alphabetModels/zombie-boss1/scene.gltf"></a-asset-item>
+      <a-asset-item id="m" src="../AR1/alphabetModels/monkey/scene.gltf"></a-asset-item>
+      <a-asset-item id="n" src="../AR1/alphabetModels/corn_necklace/scene.gltf"></a-asset-item>
+      <a-asset-item id="q" src="../AR1/alphabetModels/ice_queen/scene.gltf"></a-asset-item>
+      <a-asset-item id="f" src="../AR1/alphabetModels/shiny_fish/scene.gltf"></a-asset-item>
+    </a-assets>
+    <a-marker type="pattern" url="../markers/alphabets/pattern-c.patt">
+      <a-item src="#c"></a-item>
+    </a-marker>
+  
+    <!-- Object stays on screen even after removing the marker -->
+    <a-marker-camera type="pattern" url="./marker/custom2.patt">
+      <a-box color="red"></a-box>
+    </a-marker-camera>
+  
+    <a-entity camera></a-entity>
+  </a-scene>
+
+</body>
+</html>

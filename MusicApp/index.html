@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    h1{
+    color: aliceblue;
+  }
+  .body{
+    text-align: center;
+  background-image: url('./assets/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
+  /* CSS */
+  .button-86 {
+    all: unset;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #111111;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-86::after,
+  .button-86::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all .4s;
+  }
+  
+  .button-86::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #717175;
+    border-radius: 10px;
+  }
+  
+  .button-86::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #3f383815;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+  }
+  
+  .button-86:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+  }
+  
+  .button-86:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .button-86:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+  }
+  .options{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 30vw;
+    flex-direction: row;
+  }
+  
+  </style>
+  
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+<div class="app">
+  <div class="body">
+    <h1>Let's Jump into Augmented Reality</h1>
+    <div class="options">
+      <button
+     id="btn"
+     onclick="navigateToMusicPage()"
+      class="button-86"
+    >
+      Music
+    </button>
+    <button
+     id="btn"
+     onclick="navigateToLearningPage()"
+      class="button-86"
+    >
+      Learning
+    </button>
+    </div>
+  </div>
+</div>
+<script>
+  function navigateToMusicPage(){
+    window.location.href = 'ar.html';
+  }
+  function navigateToLearningPage(){
+    window.location.href = '../AR PROJECT/arapp.html';
+  }
+</script>
+</body>
+</html>
